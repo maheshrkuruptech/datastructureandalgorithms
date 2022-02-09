@@ -10,6 +10,9 @@ public class AnagramChecker {
         String key = "deposit";
         System.out.println(isAnagram(key.toUpperCase() , "dopiest".toUpperCase()));
         String [] dictionary = new String[]{ "crapy" , "deposit" ,  "elite" , "xenia" };
+        //Binary Search comes handy when have the luxury for pre-processing
+        //In that case , find all hash , sort the hash in the pre-processing step
+        //Look-up is just finding input hash and do a binary search.
         System.out.println(binarySearchInPreProcessed(dictionary , "xenia"));
     }
     static boolean isAnagram(String key , String input) {
