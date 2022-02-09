@@ -25,15 +25,32 @@ Access elements will have the complexity of O(1).  Array follows random access m
 Time Complexity / Space Complexity Depends on the position at which the data needs to be inserted and if the 
 array is sorted or not.
 ##### In case of unsorted array
+```     
+for(int i = size  -1 ;  i < position  - 1 ; i--)
+a[i +1 ] = a [i]
+```
+
+```
 a[size] = a[pos]
 a[pos] = 1
+```
+
 Here its theta(1).
 
 ##### In case of sorted array
 Binary Search ; find the index , shift the elements from that to the end ;  then update the data with O(n)
 
+#### Delete data at certain position
+[1,2,3,4] ; pos = 2
+```     
+for(int i = position -1 ;  i < size - 1 ; i++)
+a[i] = a [i + 1]
+```
+```
+a[pos] = i 
+a[size -1] = 0
 
-
+```
 
 
 
