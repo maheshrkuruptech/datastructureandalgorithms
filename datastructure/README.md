@@ -21,5 +21,19 @@ Access elements will have the complexity of O(1).  Array follows random access m
     Runtime want to extend the array. Then Memory manager has to copy the initial array , delete and then allocate the 
     needed to become contiguous for random access with complexity O(n).
 
+#### Insert data at certain position. 
+Time Complexity / Space Complexity Depends on the position at which the data needs to be inserted and if the 
+array is sorted or not.
+##### In case of unsorted array
+a[size] = a[pos]
+a[pos] = 1
+Here its theta(1).
+
+##### In case of sorted array
+Binary Search ; find the index , shift the elements from that to the end ;  then update the data with O(n)
+
+
+
+
 
 
