@@ -83,6 +83,7 @@ public class MergeSortedLinkedList {
     if(y == null) {
       return y;
     }
+
     if(x.data < y.data) {
       x.next = sortedMerge(x.next , y);
         return x;
@@ -92,23 +93,4 @@ public class MergeSortedLinkedList {
     }
   }
 
-  static Node sortedMerge1(Node x,Node y)
-  {
-    if(x == null)
-      return y;
-
-    if(y == null)
-      return x;
-
-    if(x.data < y.data)
-    {
-      x.next = sortedMerge(x.next,y);
-      return x;
-    }
-    else
-    {
-      y.next = sortedMerge(x,y.next);
-      return y;
-    }
-  }
 }
