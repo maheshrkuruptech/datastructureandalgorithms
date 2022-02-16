@@ -130,3 +130,8 @@ Application :
 6. Topology Sort  
 7. Tower of Hanoi
 
+Implementing using Array will be straight-forward
+But implementing with LinkedList , should make the operations on the first node so that 
+the O(1) can be maintained. 
+
+Push : Create an element ; swap the head.

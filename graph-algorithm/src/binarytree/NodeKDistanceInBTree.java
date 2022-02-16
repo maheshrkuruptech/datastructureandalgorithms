@@ -2,8 +2,7 @@ package binarytree;
 
 import java.util.*;
 
-class NodeKDistanceInBTree
-{
+class NodeKDistanceInBTree {
   Map<TreeNode, TreeNode> parent;
 
   public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
@@ -69,15 +68,11 @@ class NodeKDistanceInBTree
   }
    
     // Driver program to test the above functions 
-    public static void main(String args[])  
-    { 
+    public static void main(String args[]) {
         NodeKDistanceInBTree tree = new NodeKDistanceInBTree();
-   
-
         tree.distanceK(null , null , 2);
     }
-  static class TreeNode
-  {
+  static class TreeNode {
     int val;
     TreeNode left, right;
 

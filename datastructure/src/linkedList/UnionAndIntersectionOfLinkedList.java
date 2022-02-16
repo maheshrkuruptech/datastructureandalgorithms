@@ -1,6 +1,7 @@
 package linkedList;
 
-public class MergeSortedLinkedList {
+
+public class UnionAndIntersectionOfLinkedList {
 
   static class Node {
     int data;
@@ -21,7 +22,7 @@ public class MergeSortedLinkedList {
       while (temp.next != null) {
         temp = temp.next;
       }
-        temp.next = new Node(data);
+      temp.next = new Node(data);
     }
     return head;
   }
@@ -60,42 +61,56 @@ public class MergeSortedLinkedList {
     System.out.print("Second Linked List : ");
     print(y);
     System.out.println();
+    System.out.print("Intersection of Linked List : ");
+    intersection(x , y);
+    System.out.println();
+    System.out.print("Union of Linked List : ");
+    union(x,y);
+    // implement union here
+    // implement intersection here.
 
-    /* merge the 2 Linked Lists and print */
-    System.out.print("Merged Linked List in Sorted Order : ");
-    print(sortedMerge(x,y));
 
   }
 
-  /**
-   *
-   * @param x first linkedList
-   * @param y second linkedlist
-   * @return result linkedlist
-   *
-   */
-  private static Node sortedMerge(Node x, Node y) {
-
-    if(x == null) {
-      return x;
-    }
-
-    if(y == null) {
-      return y;
-    }
-
-    if(x.data < y.data) {
-      x.next = sortedMerge(x.next , y);
-        return x;
-    } else {
-      if(x.next !=null && x.data == y.data) {
-        y.next = sortedMerge(y.next , x.next);
-        return y;
+  public static void intersection(Node x , Node y) {
+    Node result = null;
+      while(x != null) {
+         if(isPresent(x.data , y)){
+            result = insert(result , x.data);
+         }
+         x = x.next;
       }
 
-      y.next = sortedMerge(y.next , x);
-        return y;
-    }
+      print(result);
   }
+
+
+  public static void union(Node x , Node y) {
+    Node result  = null;
+    while(x !=null) {
+      result = insert(result , x.data);
+      x = x.next;
+    }
+
+    while(y !=null) {
+      if(!isPresent(y.data , result)){
+        result = insert(result , y.data);
+      }
+      y = y.next;
+    }
+
+    print(result);
+  }
+
+  static  boolean isPresent(int data , Node head) {
+    Node t = head;
+    while (t != null) {
+      if (t.data == data)
+        return true;
+      t = t.next;
+    }
+    return false;
+  }
+
 
 }

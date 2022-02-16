@@ -6,8 +6,7 @@ class BellmanFord {
 	// A class to represent a weighted edge in graph
 	class Edge {
 		int src, dest, weight;
-		Edge()
-		{
+		Edge() {
 			src = dest = weight = 0;
 		}
 	};
@@ -17,8 +16,7 @@ class BellmanFord {
 
 
 	// Creates a graph with V vertices and E edges
-	BellmanFord(int v, int e)
-	{
+	BellmanFord(int v, int e) {
 		V = v;
 		E = e;
 		edge = new Edge[e];
@@ -29,15 +27,14 @@ class BellmanFord {
 	// The main function that finds shortest distances from src
 	// to all other vertices using Bellman-Ford algorithm. The
 	// function also detects negative weight cycle
-	void BellmanFord(BellmanFord bellmanFord, int src)
-	{
+	void BellmanFord(BellmanFord bellmanFord, int src) {
 		int V = bellmanFord.V, E = bellmanFord.E;
 		int dist[] = new int[V];
 
-		// Step 1: Initialize distances from src to all other
-		// vertices as INFINITE
-		for (int i = 0; i < V; ++i)
+		// Step 1: Initialize distances from src to all other vertices as INFINITE.
+		for (int i = 0; i < V; ++i) {
 			dist[i] = Integer.MAX_VALUE;
+		}
 
 		dist[src] = 0;
 

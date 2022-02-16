@@ -22,16 +22,13 @@ public class InvertBinaryTree {
   public static void main(String[] args) {
     InvertBinaryTree tree = new InvertBinaryTree();
     tree.invertTree(null);
-
   }
 
-  static class TreeNode
-  {
+  static class TreeNode {
     int val;
     TreeNode left, right;
 
-    TreeNode(int item)
-    {
+    TreeNode(int item) {
       val = item;
       left = right = null;
     }
