@@ -34,7 +34,6 @@ public class Fibanocci {
   }
 
   private static int fib(int n) {
-    int init = 0;
     if (n == 0) {
       return 0;
     }
