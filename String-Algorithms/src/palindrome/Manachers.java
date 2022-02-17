@@ -1,5 +1,7 @@
+package palindrome;
+
 /**
- * Manachers Algorithm for Palindrome.
+ * palindrome.Manachers Algorithm for Palindrome.
  * Complexity ; time complexity : O(n)
  *
  */

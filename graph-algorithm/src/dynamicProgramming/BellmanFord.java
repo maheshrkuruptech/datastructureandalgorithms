@@ -1,4 +1,4 @@
-package greedy;
+package dynamicProgramming;
 // A Java program for Bellman-Ford's single source shortest path algorithm.
 
 // A class to represent a connected, directed and weighted graph

@@ -9,11 +9,11 @@ public class ReverseAnArray {
   }
 
   private static void  reverseArray(String[] elements) {
-    int mid = elements.length;
-    for(int i = 0 ; i < mid  /2 ; i++) {
+    int arrayLength = elements.length;
+    for(int i = 0 ; i < arrayLength  /2 ; i++) {
         String temp  = elements[i];
-        elements[i] = elements[mid - i - 1];
-        elements[mid - i - 1] = temp;
+        elements[i] = elements[arrayLength - i - 1];
+        elements[arrayLength - i - 1] = temp;
     }
     System.out.println(Arrays.toString(elements));
   }
