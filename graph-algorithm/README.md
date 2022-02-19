@@ -12,7 +12,7 @@ DisAdvantage:
 This wouldn't work if there is a cycle with total weight is negative.
 
 #### Pseudo code
-```aidl
+```
 Edge has source , destination and weight 
 
 for(int i = 0 ; i < vertices ; i ++) {
