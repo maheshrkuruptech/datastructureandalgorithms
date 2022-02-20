@@ -83,13 +83,14 @@ Time to traverse wrt  Complexity is O(n).
 Binary Search is not possible.
 Random access of memory is not possible. 
 
+**Note** : Always keep the head point to the initial element. Insertion or deletion to use
+temp node ; assign head to temp and do the operation so that head points to the initial location.
 ##### Types
  Singly LinkedList : Simplest , only data and pointer to its next node.
  Rest are enhancements on LinkedList.    
  Doubly LinkedList : Data and pointer to previous and next node. 
  Circular LinkedList : Is a variation of singly linked list ; with last node having address of first node. 
- Doubly Circular LinkedList: first node previous node will be last node address; last node points to first node address. 
-
+ Doubly Circular LinkedList: first node previous node will be last node address; last node points to first node address.
 ##### 
 Applications:
 1. Browser back/forward button
