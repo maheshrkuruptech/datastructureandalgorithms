@@ -2,7 +2,7 @@ package array;
 
 import java.util.HashMap;
 
-public class SubArraySumEqualsK {
+public class ContiguousSubArraySumEqualsK {
 
   public static void main(String[] args) {
     System.out.println(subarraySum(new int[] {0 , 1,2,3, 2 , 4} , 6));
