@@ -98,7 +98,7 @@ public class ReverseNElementsLinkedList {
 
   public static void main(String[] args) {
 
-    Node x = null, y = null;
+    Node x = null;
 
     /* construct the first Linked List */
     x = insert(x,3);
