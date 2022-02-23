@@ -1,7 +1,6 @@
 package linkedList;
 
 
-import linkedList.RemoveElementsFromLinkedList.Node;
 
 public class RemoveDuplicateElementsFromSortedLinkedList {
   static class Node {
