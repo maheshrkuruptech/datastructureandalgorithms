@@ -1,3 +1,6 @@
+
+## Linear Data Structure
+
 ### Arrays
 Arrays are fixed size sequenced collection of same datatype. 
 Arrays allocate memory at intialization time ; though there is a concept of dynamic array. 
@@ -75,7 +78,7 @@ Deletion and Insertion is simpler in this data structure. Add elements involves 
 ##### Advantage
 Wastage of memory due to initialization at compile time is solved.
 Its of dynamic size. 
-Deletion and Insertion time complexity is O(1)
+Deletion and Insertion time complexity is O(1) ?? :D
 
 ##### DisAdvantage
 Extra memory to store pointers.
@@ -99,9 +102,8 @@ Applications:
  
 #### Comparison of Array vs LinkedList
 ###### Cost of accessing elements
-    ```
-    O(n) vs O(1)
-    ```
+    O(n) vs O(1)    
+    
 ###### Memory Requirement 
     More in linked list with pointer
 ###### Memory Utilization
@@ -126,7 +128,8 @@ Application :
 1. Reverse a string. 
 2. Undo mechanism
 3. Recursion function call
-4. Balance of parentheses ,by compiler
+4. Balance of parentheses ,by a compiler . 
+   All opening can go in a stack. Take each closed and pop from stack to compare.
 5. Infix to Postfix/prefix.
 6. Topology Sort  
 7. Tower of Hanoi
@@ -135,4 +138,177 @@ Implementing using Array will be straight-forward
 But implementing with LinkedList , should make the operations on the first node so that 
 the O(1) can be maintained. 
 
-Push : Create an element ; swap the head.
+Pseudo Code for Stack Implementation using Linked List
+```
+Keep a global reference of head using along with the Node. 
+ Node {
+    int data;
+    Node next;
+ }
+ Node top;
+push () {
+    Node n  = new Node();
+    n.data = x;
+    n.next = top;
+    top = n;
+}
+public void peek() {
+        top  = top.data;
+}
+public void pop() {
+        top  = top.next;
+}
+```
+Pseudo Code for Stack Implementation using Array
+```
+int top; // initialize to -1 in constructor.
+int a[] = new int[MAX];
+
+push() {
+a[++top] = x;
+}
+int pop () {
+return a[top--];
+}
+
+int peek() {
+return a[top];
+}
+```
+
+
+### Binary Tree
+
+Height of binary tree : log(n)
+Few definitions : 
+
+Complete Binary Tree: - At the last level , all the elements are filled until the leaf node. 
+And the elements in a leaf are filled from left to right without any missing element.
+
+Full Binary Tree: Binary tree with max no of nodes ie ,  2^n - 1 no of elements.
+
+#### Binary Tree Array Representation. 
+Index starts with 1 for easy representation. Elements are formed level by level.
+Relationship is formed by following formulae. For node 
+
+```
+Parent = i/2 (floor value) 
+Left Child = 2*i
+Right Child = 2*i + 1
+``` 
+If any elements are not present , leave blank(Dont fill to maintain the relationship)
+
+
+### Heap
+Heap is a specialized complete binary tree satisfying the heap property. 
+
+Max Heap :  Parent node must be greatest among the keys present at all of its children recursively.
+
+Min Heap : Parent node must be lowest among the keys present at all of its children recursively.
+
+##### Insert Operation in Heap
+**Insert should always happen in the leaf** last free space , filling left to right. 
+(Making it a complete binary tree after insertion , maintaining the  Heap property) and 
+then **move the elements upward**  until the child elements are less or greater(depends on the Heap
+property) than the inserted element.
+
+Time Complexity : O(1)  - O(log n)
+
+##### Delete Operation in Max Heap
+**Delete the root element** . To maintain the complete binary tree structure , then 
+last element from the complete tree (right most leaf) will take the place of root element. 
+And adjust from root to leaf. 
+
+Time Complexity : O(1)  - O(log n)
+
+
+Delete operation will free up a space in the array and if we keep filling the elements in 
+the empty space the resultant array is sorted. This is the basic technique of Heap Sort. 
+
+##### Procedure
+```
+Create a heap - Following the insert operation process maintaining the heap prop: - O(nlogn)
+Delete all the elements from heap - O(nlogn)
+```
+**Note :** Use Max Heap to get array sorted in ascending order. Min Heap for desc order. 
+
+Heap Sort Complexity : O(nlogn)
+
+#### Heapify
+Process of creating a heap data structure for input elements. This could be a max heap
+or min heap.  This is done by looking node downwards.
+
+Heapify Time Complexity : O(n) ; Achieved by the process of siftDown.
+
+Procedure.
+```
+Check all the nodes starting from right leaf node , 
+if it has any children node. 
+Check if its child nodes maintaining the min/max heap property. 
+If not swap recursively until the property is maintained. 
+```  
+
+#### Priority Queue
+Elements are Inserted and Deleted based on the priority. Not a FIFO queue.
+
+Delete , always get the highest priority element. The priority could be the number itself. 
+     
+Small number , High priority (**Min Heap**) OR Large number High priority(**Max Heap**).
+
+If implement priority queue using Array, delete is O(n) ; even if sorted.
+
+With Heap , since its already sorted , O(log n).
+
+## Non Linear Data Structure
+Data is in the form of hierarchy. 
+### Graph
+
+### Tree
+Used to represent data in hierarchical relationship between them. 
+
+Tree has different meaning in the context it's using. 
+
+In Graph Theory , Tree is an un-directed graph , connected and acyclic.
+
+In Data Structure ,A collection of entities linked together to form a hierarchy. 
+It follows top-down approach.  Elements are Roots and Nodes.
+
+Depth of a node : No: of edges  from root until the node
+
+Height of node  : Longest path from node to leaf
+
+Degree of a node :  No : of child elements for the node
+
+Degree of a tree : Max degree of all nodes
+
+Internal Node : ALl nodes except the leaf node. 
+    
+#### Binary Tree
+Trees with Utmost 2 child nodes.
+Max  no of nodes at any  level n = 2^n
+
+Max no of nodes of height h = 2^h+1 - 1 
+
+###### Types of B-tree
+
+##### Full / Proper / Strict
+Each node should have either 0 or 2 children.
+##### Complete
+All levels are filled except the leaf node and the nodes should be 
+as left as possible. 
+###### Perfect
+All leaf nodes are full.
+###### Degenerate / Skewed 
+Each internal node has only one child. 
+
+|Tree | Max Nodes  | Min Nodes |
+| --- | ------------- | ------------- |
+| Binary | 2^h+1 - 1   | h +1 |
+| Full| 2^h+1 - 1   | 2h+1  |
+| Complete| 2^h+1 - 1   | 2h  |
+
+|Tree | Min Height  | Max Height |
+| --- | ------------- | ------------- |
+| Binary | log(n+1) - 1   | n-1  |
+| Full| log(n+1) - 1   | (n + 1) / 2  |
+| Complete| log(n+1) - 1   | log n  |
