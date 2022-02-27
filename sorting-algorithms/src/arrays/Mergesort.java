@@ -40,18 +40,18 @@ public class Mergesort {
       rightIndex[i - mid] = input[i];
     }
 
-
     mergeSort(leftIndex, mid);
 
     mergeSort(rightIndex, arrayLength - mid);
 
-    merge(input, leftIndex, rightIndex, mid, arrayLength - mid);
+    merge(input, leftIndex, rightIndex);
   }
 
-  public static void merge( int[] input, int[] leftArray, int[] rightArray, int left, int right) {
+  public static void merge( int[] input, int[] leftArray, int[] rightArray) {
 
     int leftSortedIndex = 0, rightSortedIndex = 0, sortedIndex = 0;
-
+    int left = leftArray.length;
+    int right = rightArray.length;
 
     while (leftSortedIndex < left && rightSortedIndex < right) {
       if (leftArray[leftSortedIndex] <= rightArray[rightSortedIndex]) {
