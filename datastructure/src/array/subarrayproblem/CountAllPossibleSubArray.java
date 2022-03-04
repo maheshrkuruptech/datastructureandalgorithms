@@ -1,10 +1,14 @@
-package array;
-public class CountSubArray {
+package array.subarrayproblem;
+
+/**
+ * Count all possible sub-array such that the highest element in the array should be the element
+ */
+public class CountAllPossibleSubArray {
     public static void main(String[] args) {
         int [] input = new int[] {3, 4, 1, 6, 2};
         int [] input2 = new int[] {2, 4, 7, 1, 5, 3};
-        countSubarrays(input);
-        countSubarrays(input2);
+        int [] result = countSubarrays(input);
+        result = countSubarrays(input2);
     }
 
     static int[] countSubarrays(int[] arr) {

@@ -275,7 +275,7 @@ It follows top-down approach.  Elements are Roots and Nodes.
 
 Depth of a node : No: of edges  from root until the node
 
-Height of node  : Longest path from node to leaf
+Height of node  : Longest path from that node to leaf
 
 Degree of a node :  No : of child elements for the node
 
@@ -312,3 +312,13 @@ Each internal node has only one child.
 | Binary | log(n+1) - 1   | n-1  |
 | Full| log(n+1) - 1   | (n + 1) / 2  |
 | Complete| log(n+1) - 1   | log n  |
+
+
+##### Tree Traversal
+###### Depth First Search
+|Type | Strategy  |
+| --- | ------------- | 
+| PreOrder | Root , Left , Right   |
+| PostOrder| Left , Right , Root|
+| InOrder| Left , Root , Right   |
+

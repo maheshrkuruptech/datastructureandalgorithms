@@ -35,37 +35,7 @@ public class ReverseNElementsLinkedList {
     }
   }
 
-  public static Node reverseBetweenMahesh(Node head, int m, int n) {
-    if(head == null || head.next == null) {
-      return head;
-    }
 
-    Node temp = head; Node temp2 = head ; Node rest = head; int counter = 0; int counter2 =0; Node initial = null;
-    while(counter < m) {
-      initial = insert(initial , temp.data);
-      counter++;
-      temp = temp.next;
-    }
-    while(counter2 < n) {
-      counter2++;
-      temp2 = temp2.next;
-    }
-
-    rest = temp2;
-
-    temp2 = initial;
-
-    while(n - m  > 1) {
-      temp = temp.next;
-      temp2.next = temp;
-    }
-    while(rest != null) {
-      rest = rest.next;
-      temp2.next = rest;
-    }
-
-    return temp2;
-  }
   public static Node reverseBetween(Node head, int m, int n) {
     if(head == null || head.next == null){
       return head;
@@ -115,10 +85,7 @@ public class ReverseNElementsLinkedList {
 
     /* merge the 2 Linked Lists and print */
     System.out.print("Reverse Linked List : ");
-  //  Node result = reverseBetween(x , 2 , 8);
-   // print(result);
-    System.out.println("New result");
-    Node result1 = reverseBetweenMahesh(x , 2 , 8);
-    print(result1);
+    Node result = reverseBetween(x , 2 , 8);
+    print(result);
   }
 }

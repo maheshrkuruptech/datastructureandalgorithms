@@ -28,27 +28,22 @@ public class QuickSort {
         if(low < high) {
           int pivotElement = input[low];
           // Move elements such that all left is lt pivot , right gt pivot
-          boolean completed = false;
-          while (!completed) {
-            while (input[i] < pivotElement) {
+          while (i < j ) {
+             while (input[i] <= pivotElement && i < high){
               i++;
             }
-            while (input[j] > pivotElement) {
+            while (input[j] > pivotElement){
               j--;
             }
-            if (j <= i) {
-              completed = true;
-            }
-            swap(input , i , j);
+              if(i < j)
+                swap(input , i , j);
           }
-
           // Swap to bring pivot element between left and right sorted.
-          int swap = input[j];
-          input[i] = swap;
+          input[low] = input[j];
           input[j] = pivotElement;
 
           // Repeat with left array of pivot
-          quickSort(input, low, j -1);
+          quickSort(input, low, j);
           //Repeat with right array of pivot
           quickSort(input, j + 1, high);
         }

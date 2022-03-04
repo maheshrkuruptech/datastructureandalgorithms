@@ -1,4 +1,4 @@
-package array;
+package array.subarrayproblem;
 
 import java.util.HashMap;
 

@@ -14,12 +14,13 @@ public class ArrayLengthMinusZeroOne {
             int init = 0;
             boolean completed = false;
             while(!completed) {
-                if(init < data.length && init + 1 < data.length &&
+                if(init + 1 < data.length &&
                     Character.getNumericValue(data[init] )+
                         Character.getNumericValue(data[init + 1] ) == 1) {
                     char [] result = new char[data.length -2];
                     int interim = 0;
                     for(int j = 0 ; j < data.length ; j++) {
+                      // collapse the  two elements
                         if(j == init || j == init+1) {
                             continue;
                         }

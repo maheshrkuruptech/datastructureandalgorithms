@@ -2,6 +2,7 @@ package array;
 
 import java.util.HashSet;
 
+
 public class PairSum {
     int numberOfWays(int[] arr, int k) {
         int count = 0 ;
