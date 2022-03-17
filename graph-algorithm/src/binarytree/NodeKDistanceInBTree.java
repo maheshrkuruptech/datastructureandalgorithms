@@ -1,5 +1,6 @@
 package binarytree;
 
+import binarytree.FindSumTraverse.TreeNode;
 import java.util.*;
 
 class NodeKDistanceInBTree {
@@ -70,7 +71,17 @@ class NodeKDistanceInBTree {
     // Driver program to test the above functions 
     public static void main(String args[]) {
         NodeKDistanceInBTree tree = new NodeKDistanceInBTree();
-        tree.distanceK(null , null , 2);
+      TreeNode node = new TreeNode(6);
+      node.left = new TreeNode(4);
+      node.right = new TreeNode(8);
+      node.right.left = new TreeNode(7);
+      node.right.right = new TreeNode(2);
+      node.left.left = new TreeNode(3);
+      node.left.right = new TreeNode(5);
+      List<Integer> result = tree.distanceK(node , node.left , 3);
+      result.stream().forEach(integer -> {
+        System.out.println(integer);
+      });
     }
   static class TreeNode {
     int val;

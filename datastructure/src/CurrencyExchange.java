@@ -1,8 +1,9 @@
 class CurrencyExchange {
 
-  boolean canGetExactChange(int targetMoney, int[] denominations) {
+  void canGetExactChange(int targetMoney, int[] denominations) {
     // Write your code here
-      return findCombination(denominations  , denominations.length , targetMoney);
+    System.out.println(
+    findCombination(denominations  , denominations.length , targetMoney));
   }
    
   
@@ -45,7 +46,7 @@ class CurrencyExchange {
     int arr_1[] = {5, 10, 25, 100, 200};
     int arr_2[] = {4, 17, 29};
     canGetExactChange(94, arr_1);
-   // canGetExactChange(94, arr_2);
+    canGetExactChange(94, arr_2);
   
   }
   
