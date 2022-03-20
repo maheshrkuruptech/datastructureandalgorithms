@@ -17,7 +17,7 @@ static String rotationalCipher(String input, int rotationFactor) {
     for(int i = 0 ; i < data.length ; i++) {    
         if(Character.isDigit(data[i])) {
           int rotated = (Character.getNumericValue(data[i]) + rotationFactor) % 10;
-          sb.append(String.valueOf(rotated));
+          sb.append(rotated);
         } else if (!Character.isLetterOrDigit(data[i])) {
           sb.append(data[i]);
         } else {
