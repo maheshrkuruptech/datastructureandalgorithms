@@ -1,4 +1,4 @@
-package arrays;
+package arrays.mergesort;
 
 /**
  * Demonstrated by considering n lists , each having size of 1.

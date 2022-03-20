@@ -1,4 +1,4 @@
-package arrays;
+package arrays.mergesort;
 
 public class Mergesort {
 

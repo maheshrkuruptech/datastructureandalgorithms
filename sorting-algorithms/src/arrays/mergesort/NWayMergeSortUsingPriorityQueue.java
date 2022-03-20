@@ -1,4 +1,4 @@
-package arrays;
+package arrays.mergesort;
 
 import java.util.PriorityQueue;
 
