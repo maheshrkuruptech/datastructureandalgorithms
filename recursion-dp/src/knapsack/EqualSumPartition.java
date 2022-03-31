@@ -1,13 +1,18 @@
 package knapsack;
 
-public class IsSubSetSumTarget {
+public class EqualSumPartition {
 
   public static void main(String[] args) {
-    int [] input = new int[] {2,3,7,8,10};
-    int target = 11;
-    findSubArrayWithSum(input , target);
-    findSubArrayWithSum(new int[] {1,2,5} , 4);
-   findSubArrayWithSum(new int[] {1,5,11,5} , 11);
+    int [] input = new int[] {1,2,5};
+    int sum = 0;
+    for(int i = 0 ; i < input.length ; i++) {
+        sum+=input[i];
+    }
+    if(sum % 2 == 0) {
+      findSubArrayWithSum(input , sum / 2);
+    }
+
+
   }
 
 
@@ -35,8 +40,7 @@ public class IsSubSetSumTarget {
         }
       }
     }
-
-   System.out.println(dpArray[input.length - 1][target]);
+      System.out.println(dpArray[input.length - 1][target]);
   }
 
 }
