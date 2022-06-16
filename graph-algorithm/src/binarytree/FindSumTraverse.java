@@ -1,7 +1,5 @@
 package binarytree;
 
-import binarytree.InvertBinaryTree.TreeNode;
-
 public class FindSumTraverse {
 
 

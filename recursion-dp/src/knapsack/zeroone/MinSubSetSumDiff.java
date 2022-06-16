@@ -2,16 +2,12 @@ package knapsack.zeroone;
 
 import java.util.Arrays;
 
-public class IsSubSetSumTarget {
+public class MinSubSetSumDiff {
 
   public static void main(String[] args) {
-    int [] input = new int[] {2,3,7,8,10};
-    int target = 11;
-    //findSubArrayWithSum(input , target);
-    findSubArrayWithSum(new int[] {1,2,5} , 4);
-    System.out.println(findSubArrayWithSumDP(new int[] {1,2,5} , 4));
-    findSubArrayWithSum(new int[] {1,5,11,5} , 11);
-    System.out.println(findSubArrayWithSumDP(new int[] {1,5,11,5} , 11));
+
+    findSubArrayWithSum(new int[] {1,2,7} , 10);
+    findSubArrayWithSum(new int[] {1,2,7,4} , 14);
   }
 
 
@@ -40,23 +36,19 @@ public class IsSubSetSumTarget {
       }
     }
 
-   System.out.println(dpArray[input.length - 1][target]);
-  }
-
-  static boolean findSubArrayWithSumDP(int[] input , int target) {
-    if(target == 0 ) {
-      System.out.println("true");
-      return true;
-    }
-    if(input.length == 0) {
-      return false;
-    }
-    if(target - input[input.length -1] >=0)
-       return findSubArrayWithSumDP(Arrays.copyOf(input , input.length -1) , target - input[input.length -1])
-              || findSubArrayWithSumDP(Arrays.copyOf(input , input.length -1) , target);
-
-     return  findSubArrayWithSumDP(Arrays.copyOf(input , input.length -1) , target);
-
+/**
+ *
+ * This is based on ||  partition ->  s1 ,, Range - s1 ||  =>  range - s1  - s1 is minimum ;
+ * Range - 2s1 is minimum. s1 => should be in the range/2 .
+ *
+ */
+    boolean []   finalOne = dpArray[input.length -1];
+      int min = Integer.MAX_VALUE;
+      for(int i = finalOne.length /2 ; i > 0  ; i --) {
+        if(finalOne[i])
+        min  = Math.min(min , target - 2*i);
+      }
+    System.out.println(min);
   }
 
 }

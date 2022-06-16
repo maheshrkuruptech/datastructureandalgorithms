@@ -1,4 +1,4 @@
-package knapsack;
+package knapsack.zeroone;
 
 public class EqualSumPartition {
 

@@ -289,8 +289,33 @@ Max  no of nodes at any  level n = 2^n
 
 Max no of nodes of height h = 2^h+1 - 1 
 
-###### Types of B-tree
 
+###### Types of B-tree
+    Binary Search Tree
+        Right is always greater than Left. 
+        Dont insert duplicates in Binary Search Tree
+        Depends on the key , the search time varies from
+        O(logn) - O(n).
+    
+    AVL Tree
+        AVL Tree is a height balanced binary search tree
+        Balance Factor = height of left - right tree. ;height in  {-1,0,1}
+        then , balance factor should be {hl - hr < = 1}
+        If not in any of this height ; apply rotation to make it balanced. 
+        
+        eg: Left left imbalance(left heavy; positive 
+            value for the balance factor. is taken care by LL rotation.
+            Then pull the pulley to the right. (Always to the opp: side)
+            Left Right imbalance(left heavy , right also heavy)
+                Fix Right - Pull  to left
+                Fix Left - Pull to right
+            Right Right Imbalance
+                Pull to left
+            Right Left Imbalance
+                Fix left -  pull to right
+                Fix right - pull to left
+
+        
 ##### Full / Proper / Strict
 Each node should have either 0 or 2 children.
 ##### Complete
