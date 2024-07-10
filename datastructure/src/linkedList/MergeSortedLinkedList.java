@@ -66,7 +66,7 @@ public class MergeSortedLinkedList {
     print(sortedMerge(x,y));
 
   }
-
+// check  next
   /**
    *
    * @param x first linkedList

@@ -29,7 +29,7 @@ public class IsSubSetSumTarget {
 
     for (int k = 1; k < input.length; k++) {
       for (int l = 1; l <= target; l++) {
-
+          System.out.println("L each time change" + l);
         // Actual Logic starts
         if (input[k - 1] <= l) {
           dpArray[k][l] = dpArray[k - 1][l] || dpArray[k -1][l - input[k - 1]];

@@ -24,6 +24,9 @@ Access elements will have the complexity of O(1).  Array follows random access m
     Runtime want to extend the array. Then Memory manager has to copy the initial array , delete and then allocate the 
     needed to become contiguous for random access with complexity O(n).
 
+
+#### Length of Array 
+Complexity is O(1)
 #### Insert data at certain position. 
 Time Complexity / Space Complexity Depends on the position at which the data needs to be inserted and if the 
 array is sorted or not. Generalized as O(n).
@@ -62,8 +65,7 @@ Solves the drawback of array ,
 2. Extending the size is overhead , since this involves allocating fresh memory , 
    copying all from previous memory block.
 
-How Linked List is  solving the problem.
-In Linked List , the data is not stored in consecutive location.
+How Linked List is  solving the problem.In Linked List , the data is not stored in consecutive location.
 
 This leads to the question on accessing next element in the list. 
 This is solved by adding the address of next value. Extra 4 byte is stored for the address of next item.
@@ -102,7 +104,7 @@ Applications:
  
 #### Comparison of Array vs LinkedList
 ###### Cost of accessing elements
-    O(n) vs O(1)    
+    O(1) vs O(n)    
     
 ###### Memory Requirement 
     More in linked list with pointer
@@ -178,9 +180,11 @@ return a[top];
 
 
 ### Binary Tree
+A tree data structure where each node has at most two children, typically referred to as the left and right child.
 
 Height of binary tree : log(n)
-Few definitions : 
+
+**Few definitions :** 
 
 Complete Binary Tree: - At the last level , all the elements are filled until the leaf node. 
 And the elements in a leaf are filled from left to right without any missing element.
@@ -200,7 +204,7 @@ If any elements are not present , leave blank(Dont fill to maintain the relation
 
 
 ### Heap
-Heap is a specialized complete binary tree satisfying the heap property. 
+Heap is a **specialized complete binary tree** satisfying the heap property. 
 
 Max Heap :  Parent node must be greatest among the keys present at all of its children recursively.
 

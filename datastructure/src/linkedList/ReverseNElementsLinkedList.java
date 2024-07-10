@@ -58,7 +58,10 @@ public class ReverseNElementsLinkedList {
       current = next;
       count++;
     }
+    // attach initial sections next as the inverted first
+
     before_m.next = previous;
+ // attach next value   sections next as the inverted last
     mth_node.next = next;
     if(m == 1){
       return previous;

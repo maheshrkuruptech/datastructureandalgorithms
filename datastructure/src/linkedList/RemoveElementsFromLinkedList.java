@@ -25,7 +25,7 @@ public class RemoveElementsFromLinkedList {
     return head;
   }
 
-  static Node delete(Node head,int data) {
+  static void delete(Node head,int data) {
     if(head == null)
       head = new Node(data);
     else {
@@ -33,13 +33,14 @@ public class RemoveElementsFromLinkedList {
       // Iterate to the end of linked list.
       while (temp.next != null) {
         if(temp.next.data == data) {
+          // remove the pointer in the next
           temp.next =  temp.next.next;
         } else {
           temp = temp.next;
         }
       }
     }
-    return head;
+    
   }
 
   /* print the Linked List */
@@ -64,7 +65,7 @@ public class RemoveElementsFromLinkedList {
 
     System.out.print("First Linked List : ");
     print(x);
-    x = delete(x , 5);
+    delete(x , 5);
     System.out.println();
     print(x);
   }

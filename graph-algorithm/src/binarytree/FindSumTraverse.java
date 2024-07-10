@@ -2,7 +2,6 @@ package binarytree;
 
 public class FindSumTraverse {
 
-
   static class TreeNode {
     int data;
     TreeNode left;
@@ -25,9 +24,17 @@ public class FindSumTraverse {
       return 0;
     }
     if(isInRange(node.data)) {
-      sum+=node.data;
+      sum+= node.data;
     }
+
+    /*
+     * Can also set sum to global
+     * But then just call function and set only 
+     *  if thats in range
+     * 
+     */
       sum+=findSum(node.left);
+       
       sum+=findSum(node.right);
 
     return sum;
@@ -42,7 +49,8 @@ public class FindSumTraverse {
     node.right.right = new TreeNode(2);
     node.left.left = new TreeNode(3);
     node.left.right = new TreeNode(5);
-    System.out.println(findSum(node));
+    
+    findSum(node);
 
   }
 }

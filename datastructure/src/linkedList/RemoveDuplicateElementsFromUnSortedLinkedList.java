@@ -34,6 +34,7 @@ public class RemoveDuplicateElementsFromUnSortedLinkedList {
 
       // Iterate to the end of linked list.
       while (temp.next != null) {
+        // create  a data structure and do the same as removal
         if(lookup.contains(temp.next.data)) {
           temp.next =  temp.next.next;
         } else {

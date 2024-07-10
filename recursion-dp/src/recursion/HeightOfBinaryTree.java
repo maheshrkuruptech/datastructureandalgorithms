@@ -20,15 +20,13 @@ public class HeightOfBinaryTree {
         if(node == null ) {
             return 0;
         }
-
-
     // apply it on smaller input.
         // hypothesis starts
             //height(node.left);
             //height(node.right);
         // hypothesis ends.
-
-        // In the induction phase , we need to get max of both , since o/p is the height of the node.
+        // In the induction phase , we need to get max of both , 
+        //since o/p is the height of the node.
         // that's the induction phase.
         return 1 + Math.max(height(node.left) , height(node.right)) ;
     }

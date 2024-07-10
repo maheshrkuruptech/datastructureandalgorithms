@@ -31,6 +31,7 @@ public class RemoveDuplicateElementsFromSortedLinkedList {
       Node temp = head;
       // Iterate to the end of linked list.
       while (temp.next != null && temp.next.next != null) {
+        // same logic compares with next
         if(temp.next.data == temp.next.next.data) {
           temp.next =  temp.next.next;
         } else {
